@@ -1,0 +1,554 @@
+/* AUTO=page_border */ .l-page:before, .l-page:after, .l-footer:before, .l-footer:after { display: block; }
+/* AUTO=page_background_color */ .l-page { background-color: rgba(229, 229, 229); } .b-ajax:before { background: rgba(243, 243, 243, 0.75); }
+
+/* Фон профиля */
+body:after {
+content:'';
+width: 100%;
+height: 100%;  
+position: fixed;
+top: 0;
+left: 0;
+z-index: 0; 
+background-image: url(https://i.imgur.com/hHItyUx.jpg);
+}
+
+
+/* Режим "кинотеатра" \ "выключить свет" на странице просмотра аниме */
+.p-anime_videos .l-page .menu-toggler {
+  display: inherit;
+  margin-top: 40px;
+}
+
+@media only screen and (min-width: 1025px) {
+  .p-anime_videos .l-page.menu-expanded .menu-slide-outer.x199 .l-content {
+    width: 100%;
+  }
+
+  .p-anime_videos .l-page.menu-expanded .player-area,
+  .p-anime_videos .l-page.menu-expanded .player-placeholder,
+  .p-anime_videos .l-page.menu-expanded iframe {
+    height: 618.25px !important;
+  }
+
+  .p-anime_videos .l-page.menu-expanded .l-menu {
+    display: none;
+  }
+
+  .p-anime_videos .l-page {
+    z-index: 9;
+  }
+
+  .p-anime_videos .l-page.menu-expanded ~ #shade {
+    display: initial;
+    opacity: 0.9;
+    z-index: 8;
+    pointer-events: none;
+  }
+
+  .p-anime_videos .l-page.menu-expanded {
+    background: rgba(20,20,20,0.2);
+  }
+}
+/* END of Режим "кинотеатра" \ "выключить свет" на странице просмотра аниме */
+
+
+/* Аниме/Манга/Ранобэ рядом с пунктами истории */
+.history-page a:before {
+  display: inline-block;
+  vertical-align: top;
+  width: 72px;
+}
+.history-page a[href ^= "/a"]:before {
+  content: '[Аниме] ';
+  color: #34a853;
+}
+.history-page a[href ^= "/m"]:before {
+  content: '[Манга] ';
+  color: #9c27b0;
+}
+.history-page a[href ^= "/r"]:before {
+  content: '[Ранобэ] ';
+  color: #039be5;
+}
+[data-locale="en"] .history-page a[href ^= "/a"]:before {
+  content: '[Anime] ';
+}
+[data-locale="en"] .history-page a[href ^= "/m"]:before {
+  content: '[Manga] ';
+}
+[data-locale="en"] .history-page a[href ^= "/r"]:before {
+  content: '[Ranobe] ';
+}
+/* END of Аниме/Манга/Ранобэ рядом с пунктами истории */
+
+
+/* цвет кликабельных текстов на блоках как Авторы, Избранное и т.д. */
+/* Цвета шкал от темного до светлого - сверху вниз */
+.bar.simple .bar.s3 {
+    background: #242B5B;
+transition: 0.2s ease-out;
+}
+.bar.simple .bar.s2 {
+    background: #333A71;
+  transition: 0.2s ease-out;
+}
+.bar.simple .bar.s1 {
+    background: #424B8F;
+transition: 0.2s ease-out;
+}
+.bar.simple .bar.s0 {
+    background: #727cc7;
+transition: 0.2s ease-out;
+}
+.bar.simple .bar {
+    border-radius: 8px;
+}
+.bar.horizontal {
+  padding: 0px 3px 0px 0px;
+}
+.activity .bar.simple .bar {
+  border-radius: 8px 8px 0px 0px;
+}
+.bar.simple .bar.s3:hover, .bar.simple .bar.s2:hover, .bar.simple .bar.s1:hover, .bar.simple .bar.s0:hover {
+    background: #d2892d;
+}
+
+
+/* Цвета аниме шкалы */
+.b-stats_bar .bar .third {
+    background: #000;
+    opacity: 0.7;
+}
+.b-stats_bar.anime .bar .second {
+    background: #727cc7;
+opacity: 0.7;
+}
+.b-stats_bar.anime .bar .first {
+    background: #242B5B;
+opacity: 0.7;
+}
+
+/* Цвета манга шкалы */
+.b-stats_bar.manga .bar .first {
+    background: #242B5B;
+opacity: 0.7;
+}
+.b-stats_bar.manga .bar .second {
+    background: #727cc7;
+    opacity: 0.7;
+}
+
+/* Скрываем кнопку "Сообщить об ошибке" в профиле */
+.p-profiles-show .b-feedback {
+  display: none;
+}
+
+/* Обо мне "линии выбора" */
+.p-profiles .about.block .b-spoiler label {
+  border: none;
+  display: inline-block !important;
+  font-weight: bold; /* толщина шрифта, можно убрать, если не нужно */
+  color: #727cc7; /* цвет текста спойлера */
+  background: #242B5B; /* цвет фона спойлера */
+  height: 30px; 
+  width: 100%;
+  font-size: 12pt; /* размер шрифта текста на спойлере */
+  padding-top: 3px; 
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+.p-profiles .about.block .b-spoiler .after:before, .about.block .b-spoiler .before:before {
+  content: '';
+}
+
+.p-profiles .about.block .b-spoiler .before {
+  width: 100%; 
+  height: 50px;
+  display: inline-block !important;
+  margin-top: -50px;
+}
+/* END of Обо мне "линии выбора" */
+
+
+
+/* Имена */
+.s-container .b-catalog_entry .cover .title.two_lined {
+  display: inline-block;
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  padding: 0 5px;
+  margin-top: 0;
+  background: rgba(0, 0, 0, 0.8); /* Цвет фона */
+  border-left: 0 solid #FF5722; /* Цвет границы с левой стороны */
+  color: #FAFAFA !important; /* Цвет текста */
+  font-size: 12px; /* Размер текста */
+  line-height: 2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: .123s ease-out;
+  overflow: hidden;
+}
+
+/* При наведении */
+.s-container .b-catalog_entry:hover .cover .title.two_lined {
+  border-left-width: 4px;
+  text-decoration: none;
+}
+
+/* Отступ у постеров */
+.s-container .cc-9-g15>.c-column,
+.s-container .cc-8-g15>.c-column,
+.s-container .cc-7-g15>.c-column,
+.s-container .cc-6-g15>.c-column {
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 767px) {
+  .s-container .cc-9-g15>.c-column,
+  .s-container .cc-8-g15>.c-column,
+  .s-container .cc-7-g15>.c-column,
+  .s-container .cc-6-g15>.c-column {
+    margin-bottom: 5px;
+  }
+}
+
+/* Bootstrap 3 Tabs */
+.b-tabs .b-tabs_switch {
+  display: inline-block;
+  padding: 10px 15px;
+  margin-right: 2px;
+  margin-bottom: -1px;
+  border: 1px solid transparent;
+  border-radius: 4px 4px 0 0;
+  color: #777;
+  cursor: pointer;
+  user-select: none;
+}
+.b-tabs .b-tabs_switch:not(.active):hover {
+  background-color: #eee;
+  border-color: #eee #eee #ddd;
+}
+.b-tabs .b-tabs_switch.active,
+.b-tabs .b-tabs_switch.active:hover {
+  color: #555;
+  cursor: default;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom-color: transparent;
+}
+
+.b-tabs .b-tabs_panel {
+  padding: 15px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+/* End of Bootstrap 3 Tabs */
+
+
+/* Время за аниме и манга */
+
+.p-profiles-show .b-stats_bar.lifetime .title {
+ display: block;
+ width: auto;
+}
+.p-profiles-show .b-stats_bar.lifetime .bar {
+ height: .5rem;
+}
+.p-profiles-show .b-stats_bar.lifetime .bar .first {
+ background: #17A37F; /* Цвет полоски */
+}
+.p-profiles-show .b-stats_bar.lifetime .cuts .cut {
+ width: 0;
+ height: 0;
+ margin: 0 -.25rem;
+ background: transparent;
+ border: .25rem solid transparent;
+ border-bottom-color: #FAFAFA;
+ z-index: 1;
+}
+.p-profiles-show .b-stats_bar.lifetime .times {
+ line-height: 0;
+}
+.p-profiles-show .b-stats_bar.lifetime .times .time {
+ color: #9E9E9E;
+ font-size: .625rem;
+ line-height: 1.25rem;
+ text-transform: uppercase;
+}
+.p-profiles-show .b-stats_bar.lifetime .times .time.checked {
+ color: #17A37F; /* Цвет даты под полоской */
+ font-weight: bold;
+}
+.p-profiles-show .b-stats_bar.lifetime .times .time.checked::before {
+ display: none;
+ color: #5f86ad;
+ opacity: .72;
+}
+
+/* End of Время за аниме и манга */
+
+
+/* СМЕНА ОБЛОЖЕК */
+
+/* Общие настройки обложек */
+.b-catalog_entry .cover .image-cutter {
+  background-size: cover;
+  background-position: top center;
+}
+
+/* Список селекторов – скрываем стандартные обложки */
+.b-catalog_entry > a[href *= 'characters/503-'] img,
+.b-catalog_entry > a[href *= 'characters/75450-'] img,
+.b-catalog_entry > a[href *= 'characters/155679-'] img,
+.b-catalog_entry > a[href *= 'characters/116319-'] img,
+.b-catalog_entry > a[href *= 'characters/145329-'] img,
+.b-catalog_entry > a[href *= 'characters/148518-'] img,
+.b-catalog_entry > a[href *= 'characters/120771-'] img,
+.b-catalog_entry > a[href *= 'characters/99661-'] img,
+.b-catalog_entry > a[href *= 'characters/97761-'] img, 
+.b-catalog_entry > a[href *= 'characters/51015-'] img, 
+.b-catalog_entry > a[href *= 'characters/117223-'] img, 
+.b-catalog_entry > a[href *= 'characters/117221-'] img, 
+.b-catalog_entry > a[href *= 'characters/13-'] img, 
+.b-catalog_entry > a[href *= 'characters/14-'] img, 
+.b-catalog_entry > a[href *= 'characters/116279-'] img, 
+.b-catalog_entry > a[href *= 'characters/601-'] img, 
+.b-catalog_entry > a[href *= 'characters/45627-'] img, 
+.b-catalog_entry > a[href *= 'characters/144581-'] img, 
+.b-catalog_entry > a[href *= 'characters/2820-'] img, 
+.b-catalog_entry > a[href *= 'animes/29803-'] img, 
+.b-catalog_entry > a[href *= 'animes/30276-'] img, 
+.b-catalog_entry > a[href *= 'animes/z28907-'] img, 
+.b-catalog_entry > a[href *= 'animes/37999-'] img, 
+.b-catalog_entry > a[href *= 'animes/11757-'] img, 
+.b-catalog_entry > a[href *= 'animes/36474-'] img, 
+.b-catalog_entry > a[href *= 'animes/35849-'] img, 
+.b-catalog_entry > a[href *= 'animes/199-'] img, 
+.b-catalog_entry > a[href *= 'characters/136359-'] img, 
+.b-catalog_entry > a[href *= 'characters/85-'] img, 
+.b-catalog_entry > a[href *= 'characters/3180-'] img, 
+.b-catalog_entry > a[href *= 'characters/75-'] img, 
+.b-catalog_entry > a[href *= 'characters/131943-'] img, 
+.b-catalog_entry > a[href *= 'characters/7302-'] img, 
+.b-catalog_entry > a[href *= 'characters/73935-'] img, 
+.b-catalog_entry > a[href *= 'characters/80-'] img, 
+.b-catalog_entry > a[href *= ''] img, 
+.b-catalog_entry > a[href *= ''] img, 
+.b-catalog_entry > a[href *= ''] img, 
+.b-catalog_entry > a[href *= 'characters/21728-'] img {
+  opacity: 0; /* visibility: hidden ломает выбор аниме/персонажа в турнирах */
+}
+
+/* Смена обложки – Alice Zuberg (персонаж) */
+.b-catalog_entry a[href *= 'characters/75450-'] .image-cutter {
+  background-image: url(https://i.pinimg.com/originals/c5/1c/6a/c51c6a9cd5f439962d5a480d8a4ec16b.jpg);
+}
+
+/* Смена обложки – Zero Two (персонаж) */
+.b-catalog_entry a[href *= 'characters/155679-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/12/58/d1/1258d1e9618ab012d7e13017f3647759.jpg);
+}
+
+/* Смена обложки – Shalltear Bloodfallen (персонаж) */
+.b-catalog_entry a[href *= 'characters/116319-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/60/63/27/60632745e250d1957e44e18b02237bd4.jpg?b=t);
+}
+
+/* Смена обложки – Chisa Kotegawa (персонаж) */
+.b-catalog_entry a[href *= 'characters/145329-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/c4/73/0d/c4730df72430e7bc9ab95ea656751c25.jpg);
+}
+
+/* Смена обложки – Altair (персонаж) */
+.b-catalog_entry a[href *= 'characters/148518-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/3b/df/5f/3bdf5f4fa35428a3e91afcf0cf98f295.jpg);
+}
+
+/* Смена обложки – Piña Co Lada (персонаж) */
+.b-catalog_entry a[href *= 'characters/120771-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/96/0e/f5/960ef572c9bee9f5d2834bf3ccc1becf.jpg);
+}
+
+/* Смена обложки – Rory Mercury (персонаж) */
+.b-catalog_entry a[href *= 'characters/99661-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/a7/c1/af/a7c1af618bdee2d3009f9c6bb14091b4.jpg);
+}
+
+/* Смена обложки – Jibril (персонаж) */
+.b-catalog_entry a[href *= 'characters/97761-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/fd/c5/5b/fdc55bffa430051695c00a095b53660d.jpg);
+}
+
+/* Смена обложки – Aqua (персонаж) */
+.b-catalog_entry a[href *= 'characters/117223-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/4f/8e/3c/4f8e3ceddaaa1dc89c94b3c28ea98af5.jpg);
+}
+
+/* Смена обложки – Yassan (персонаж) */
+.b-catalog_entry a[href *= 'characters/51015-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/77/d4/b9/77d4b927097db62bc19f95ed2f8edd59.jpg);
+}
+
+/* Смена обложки – Kazuma Satou (персонаж) */
+.b-catalog_entry a[href *= 'characters/117221-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/bc/09/38/bc09388d6cf7c424c3995f7d7508c72b.jpg);
+}
+
+/* Смена обложки – Itachi Uchiha (персонаж) */
+.b-catalog_entry a[href *= 'characters/14-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/a5/04/11/a504110ab0b6caee4cf5ac22af394867.jpg);
+}
+
+/* Смена обложки – Sasuke Uchiha (персонаж) */
+.b-catalog_entry a[href *= 'characters/13-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/23/27/13/2327139789bcb3006702dea399451294.jpg);
+}
+
+/* Смена обложки – Sebas Tian (персонаж) */
+.b-catalog_entry a[href *= 'characters/116279-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/80/b5/86/80b58651c6027a1b61bee83c92092870.jpg);
+}
+
+/* Смена обложки – Alucard (персонаж) */
+.b-catalog_entry a[href *= 'characters/601-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/16/d5/f0/16d5f0884c0755fdbdb8e57d8a15f886.jpg);
+}
+
+/* Смена обложки – Levi (персонаж) */
+.b-catalog_entry a[href *= 'characters/45627-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/3d/6a/d0/3d6ad04a1b1014620ef50020b487d54d.jpg?b=t);
+}
+
+/* Смена обложки – Iori Kitahara (персонаж) */
+.b-catalog_entry a[href *= 'characters/144581-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/d6/d8/46/d6d84659fd3ed2c20771fa84de1fbfb9.jpg);
+}
+
+/* Смена обложки – Bunta Fujiwara (персонаж) */
+.b-catalog_entry a[href *= 'characters/2820-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/33/0d/84/330d84ef36b29057ef99c54d4d67853b.jpg);
+}
+
+/* Смена обложки – Overlord (Anime) */
+.b-catalog_entry a[href *= 'animes/29803-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/fc/6f/26/fc6f2670210ee938abba6ac784f071a4.jpg);
+}
+
+/* Смена обложки – One Punch Man (Anime) */
+.b-catalog_entry a[href *= 'animes/30276-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/86/a3/4e/86a34ed425368e2439a6fc96f58f291b.jpg);
+}
+
+/* Смена обложки – Gate: Jieitai Kanochi nite, Kaku Tatakaeri (Anime) */
+.b-catalog_entry a[href *= 'animes/z28907-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/26/6b/d9/266bd9d69b5aea54341ee162bc9ad18a.jpg);
+}
+
+/* Смена обложки – Госпожа Кагуя: в любви как на войне  (Anime) */
+.b-catalog_entry a[href *= 'animes/37999-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/a6/83/18/a683181dae7ac7125d819d249d6d2b55.jpg);
+}
+
+/* Смена обложки – Sword Art Online 1st season (Anime) */
+.b-catalog_entry a[href *= 'animes/11757-'] .image-cutter {
+  background-image: url(https://i.imgur.com/4jxOJ6a.png);
+}
+
+/* Смена обложки – Sword Art Online: Alicization (Anime) */
+.b-catalog_entry a[href *= 'animes/36474-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/c1/d9/80/c1d980c668c47288b8f84523a21cfa89.jpg);
+}
+
+/* Смена обложки – Darling in the FranXX (Anime) */
+.b-catalog_entry a[href *= 'animes/35849-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/25/05/fd/2505fd37cadd4fbe1ec6c3f3b80f9cff.jpg);
+}
+
+/* Смена обложки – Унесённые призраками (Anime) */
+.b-catalog_entry a[href *= 'animes/199-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/50/24/7b/50247bb2e6c56728a990cd71a0c46bf6.jpg);
+}
+
+/* Смена обложки – Kaguya Shinomiya (персонаж) */
+.b-catalog_entry a[href *= 'characters/136359-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/ed/c5/ee/edc5ee90bb8771759f58579dcce53bb9.jpg);
+}
+
+/* Смена обложки – Shuna (персонаж) */
+.b-catalog_entry a[href *= 'characters/131943-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/2b/2d/88/2b2d8886a2ed494a96b62748ff11b574.jpg?b=t);
+}
+
+/* Смена обложки – Kushina Uzumaki (персонаж) */
+.b-catalog_entry a[href *= 'characters/7302-'] .image-cutter {
+  background-image: url(https://data.whicdn.com/images/321073736/large.jpg);
+}
+
+/* Смена обложки – Kakashi Hatake (персонаж) */
+.b-catalog_entry a[href *= 'characters/85-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/2c/8a/91/2c8a91e79a0c6f49402bc7510c83a4cf.jpg?b=t);
+}
+
+/* Смена обложки – Pain/Nagato (персонаж) */
+.b-catalog_entry a[href *= 'characters/3180-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/12/6e/b8/126eb81e8c96ce0a3ca12a44ee912b41.jpg);
+}
+
+/* Смена обложки – Ryuk (персонаж) */
+.b-catalog_entry a[href *= 'characters/75-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/28/ff/49/28ff497ef68b9e834cde473ce7677e01.jpg);
+}
+
+/* Смена обложки – Saitama (персонаж) */
+.b-catalog_entry a[href *= 'characters/73935-'] .image-cutter {
+  background-image: url(https://data.whicdn.com/images/212037480/large.jpg);
+}
+
+/* Смена обложки – Light Yagami (персонаж) */
+.b-catalog_entry a[href *= 'characters/80-'] .image-cutter {
+  background-image: url(https://i-h1.pinimg.com/564x/f6/60/46/f66046c440a25e5e8b01e705f52a4f4a.jpg);
+}
+
+/* Смена обложки –  (персонаж) */
+.b-catalog_entry a[href *= ''] .image-cutter {
+  background-image: url();
+}
+
+/* Смена обложки –  (Anime) */
+.b-catalog_entry a[href *= ''] .image-cutter {
+  background-image: url();
+}
+
+/* Смена обложки –  (Manga) */
+.b-catalog_entry a[href *= ''] .image-cutter {
+  background-image: url();
+}
+
+/* End of СМЕНА ОБЛОЖЕК */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[data-locale="en"].copyright:before {
+    content: 'Original theme by tenshiHaru ';
+}
+[data-locale="ru"] .copyright:before {
+    content: 'Оригинальная тема от tenshiHaru ';
+}
